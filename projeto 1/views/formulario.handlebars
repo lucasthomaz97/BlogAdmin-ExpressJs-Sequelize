@@ -1,0 +1,23 @@
+<header class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mr-md-3"><a class="nav-link" href="/">Lista de Posts</a></li>
+            <li class="nav-item mr-md-3 mt-2">></li>
+            <li class="nav-item mr-md-3 mt-2">Novo post</li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container-fluid p-4">
+    <form action="/add" method="POST">
+        <div class="form-row">
+            <p class="text-body">Título: </p>
+            <input type="text" name="titulo" class="form-control">
+        </div>
+        <div class="form-row mt-2">
+            <p class="text-body">Conteúdo: </p>
+            <textarea class="form-control" name="conteudo"></textarea>
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">Cadastrar Postagem</button>
+    </form>
+</div>

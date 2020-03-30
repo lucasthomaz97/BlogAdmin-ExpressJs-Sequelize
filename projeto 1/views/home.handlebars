@@ -1,0 +1,36 @@
+<header class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mr-md-3 mt-2">Lista de Posts</li>
+            <li class="nav-item mr-md-3"><a class="nav-link" href="/cadastro">Novo post</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container-fluid">
+    {{#if del}}
+    <div class="alert alert-success" role="alert">
+        O artigo foi deletado com sucesso!
+    </div>
+    {{/if}}
+    {{#if edit}}
+    <div class="alert alert-sucess" role="alert">
+        O artigo foi editado com sucesso!
+    </div>
+    {{/if}}
+
+    {{#each posts}}
+    <div class="mb-2 p-3 row">
+        <div class="col-10">
+            <h2 class="display-4">{{dataValues.titulo}}</h2>
+            <small class="font-weight-lighter">{{dataValues.createdAt}}</small>
+            <p class="text-body text-justify mt-3">{{dataValues.conteudo}}</p>
+            <hr>       
+        </div>
+        <div class="col-2 mt-4">
+            <a href="/deletar/{{dataValues.id}}"><button type="button" class="btn btn-danger">Excluir</button></a>
+            <a href="/editar/{{dataValues.id}}"><button type="button" class="btn btn-info mt-4">Editar </button></a>
+        </div>
+    </div>
+{{/each}}
+</div>

@@ -1,0 +1,23 @@
+<header class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mr-md-3"><a class="nav-link" href="/">Lista de Posts</a></li>
+            <li class="nav-item mr-md-3 mt-2">></li>
+            <li class="nav-item mr-md-3 mt-2">Editar post {{epost.dataValues.id}}</li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container-fluid p-4">
+    <form action="/edit/{{epost.dataValues.id}}" method="POST">
+        <div class="form-row">
+            <p class="text-body">Título: </p>
+            <input type="text" name="titulo" class="form-control" value="{{epost.dataValues.titulo}}">
+        </div>
+        <div class="form-row mt-2">
+            <p class="text-body">Conteúdo: </p>
+            <textarea class="form-control" name="conteudo">{{epost.dataValues.conteudo}}</textarea>
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">Editar Postagem</button>
+    </form>
+</div>
